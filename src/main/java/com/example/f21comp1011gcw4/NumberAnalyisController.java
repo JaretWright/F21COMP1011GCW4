@@ -25,7 +25,8 @@ public class NumberAnalyisController implements Initializable {
     private void assessPhoneNumber()
     {
         String phoneNumber = phoneNumberTextField.getText();
-        if (phoneNumber.matches("[2-9]\\d{2}[2-9]\\d{2}\\d{4}"))
+        getAreaCode(phoneNumber.replaceAll("[^0-9]+",""));
+        if (phoneNumber.matches("[(]?[2-9]\\d{2}\\)?[-.\\s]?[2-9]\\d{2}[-.\\s]?\\d{4}"))
             msgLabel.setText("valid phone number");
         else
             msgLabel.setText("invalid phone number");
@@ -36,5 +37,15 @@ public class NumberAnalyisController implements Initializable {
         phoneNumberTextField.textProperty().addListener((observableValue, oldValue, newValue) -> {
             assessPhoneNumber();
         });
+    }
+
+    private void getAreaCode(String phoneNumber)
+    {
+        //simple solution if the area code is just the first 3 digits
+        if (phoneNumber.length()>=3 && phoneNumber.substring(0,3).matches("[2-9]\\d{2}"))
+            areaCodeLabel.setText("Area code: "+ phoneNumber.substring(0,3));
+        if (phoneNumber.length()>=6 && phoneNumber.substring(3,6).matches("[2-9]\\d{2}"))
+            cityCodeLabel.setText("City code: " + phoneNumber.substring(3,6));
+
     }
 }
