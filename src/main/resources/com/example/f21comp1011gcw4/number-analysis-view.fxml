@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f21comp1011gcw4.NumberAnalyisController">
+    <children>
+        <VBox alignment="CENTER" layoutX="157.0" layoutY="105.0" prefHeight="400.0" prefWidth="600.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER" spacing="10.0">
+                    <children>
+                        <TextField fx:id="phoneNumberTextField" promptText="Enter Phone Number" />
+                    </children>
+                </HBox>
+                <VBox alignment="CENTER" spacing="10.0">
+                    <children>
+                        <Label fx:id="areaCodeLabel" text="Area Code" />
+                        <Label fx:id="cityCodeLabel" text="City Code" />
+                        <Label fx:id="msgLabel" text="Label" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
